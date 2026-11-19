@@ -101,9 +101,6 @@ public partial class PostgresContext : DbContext
             entity.HasIndex(e => e.IdUser, "ix_orders_user");
 
             entity.Property(e => e.IdOrder).HasColumnName("id_order");
-            entity.Property(e => e.CreatedAt)
-                .HasDefaultValueSql("now()")
-                .HasColumnName("created_at");
             entity.Property(e => e.DateOrder)
                 .HasDefaultValueSql("CURRENT_DATE")
                 .HasColumnName("date_order");
@@ -167,11 +164,6 @@ public partial class PostgresContext : DbContext
             entity.ToTable("products", "miracle_shoes");
 
             entity.Property(e => e.IdProduct).HasColumnName("id_product");
-            entity.Property(e => e.Amount)
-                .HasDefaultValue(0)
-                .HasColumnName("amount")
-                .ValueGeneratedOnAddOrUpdate();
-            entity.Property(e => e.Amount).Metadata.SetAfterSaveBehavior(PropertySaveBehavior.Ignore);
             entity.Property(e => e.Category)
                 .HasMaxLength(100)
                 .HasDefaultValueSql("'shoes'::character varying")

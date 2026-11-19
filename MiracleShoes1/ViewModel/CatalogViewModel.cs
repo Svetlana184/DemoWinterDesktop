@@ -80,7 +80,6 @@ namespace MiracleShoes1.ViewModel
                 NameProduct = p.NameProduct,
                 Description = p.Description,
                 Cost = p.Cost,
-                Amount = p.Amount,
                 Category = p.Category,
                 Subcategory = p.Subcategory,
                 CompanyName = p.IdCompanyNavigation == null

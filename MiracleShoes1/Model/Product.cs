@@ -21,8 +21,6 @@ public partial class Product
 
     public string Description { get; set; } = null!;
 
-    public int Amount { get; set; }
-
     public decimal Cost { get; set; }
 
     public virtual ICollection<AvailableSize> AvailableSizes { get; set; } = new List<AvailableSize>();

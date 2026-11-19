@@ -13,8 +13,6 @@ public partial class Order
 
     public decimal? TotalCost { get; set; }
 
-    public DateTime CreatedAt { get; set; }
-
     public virtual User? IdUserNavigation { get; set; }
 
     public virtual ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
