@@ -25,16 +25,10 @@ namespace MiracleShoes1.ViewModel
             set => SetProperty(ref _selectedLogin, value);
         }
 
-        public string[] AvailableLogins { get; }
-
         public LoginViewModel(Window loginWindow)
         {
             _loginWindow = loginWindow;
             _context = new PostgresContext();
-            AvailableLogins = _context.Users
-                .OrderBy(u => u.Login)
-                .Select(u => u.Login)
-                .ToArray();
         }
 
         [RelayCommand]
@@ -42,7 +36,7 @@ namespace MiracleShoes1.ViewModel
         {
             if (string.IsNullOrWhiteSpace(SelectedLogin))
             {
-                MessageBox.Show("Выберите логин.", "Вход",
+                MessageBox.Show("Введите логин.", "Вход",
                     MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }

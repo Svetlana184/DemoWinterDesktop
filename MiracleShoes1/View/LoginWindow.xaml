@@ -11,10 +11,9 @@
         Background="{StaticResource MainBackground}">
     <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
         <TextBlock Text="Вход в систему" FontSize="22" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,20"/>
-        <TextBlock Text="Выберите логин:" FontSize="14" Margin="0,0,0,5"/>
-        <ComboBox x:Name="LoginComboBox" Width="260" Height="30"
-                  ItemsSource="{Binding AvailableLogins}"
-                  SelectedItem="{Binding SelectedLogin, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBlock Text="Введите логин" FontSize="14" Margin="0,0,0,5"/>
+        <TextBox x:Name="LoginTextBox" Width="260" Height="30"
+                 Text="{Binding SelectedLogin, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,0,10"/>
         <Button Content="Войти" Width="140" Height="35" Margin="0,20,0,0"
                 Background="{StaticResource AccentColor}" Foreground="White" FontWeight="Bold"
                 Command="{Binding LoginCommand}"/>
